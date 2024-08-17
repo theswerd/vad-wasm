@@ -1,5 +1,5 @@
 {
-  "name": "@ben/vad",
+  "name": "@bs/vad",
   "version": "0.0.1",
   "exports": "./src/main.ts",
   "publish": {
