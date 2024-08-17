@@ -3,7 +3,7 @@
 # VAD on WASM!
 ![audio i made into an image](https://github.com/user-attachments/assets/5dc75a79-ecfb-4514-bfdd-eb5903ac6a55)
 
-Package for Voice Activity Detection (VAD) on WASM so it can be used in Deno easily.
+Package for Voice Activity Detection (VAD) on WASM so it can be used in Serverless Environments easily.
 
 Built by the team at [Freestyle](https://www.freestyle.sh) for the amazing guys @ [Lilac Labs](https://www.lilaclabs.ai/) 🫶!
 
