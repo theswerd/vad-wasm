@@ -1,5 +1,9 @@
 import LibFvadModule from "../out/libfvad.js";
 
+
+/**
+ * Voice Activity Detector (VAD) using libfvad on WASM.
+ */
 export class VAD {
   _fvadPtr?: number;
   // deno-lint-ignore no-explicit-any
