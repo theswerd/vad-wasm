@@ -1,0 +1,19 @@
+{
+  "name": "@ben/vad",
+  "version": "0.0.1",
+  "exports": "./src/main.ts",
+  "publish": {
+    "include": [
+      "LICENSE",
+      "README.md",
+      "src/**/*",
+      "out/**/*"
+
+    ],
+    "exclude": [
+        "deps/**/*",
+        ".vscode/**/*",
+        "scripts/**/*"
+    ]
+  }
+}
