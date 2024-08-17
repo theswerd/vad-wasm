@@ -6,6 +6,12 @@ export class VAD {
   _module?: any;
   _successfulyInitialized: boolean = false;
 
+  /**
+   * Initialize the Voice Activity Detector (VAD).
+   * @param props - The properties to initialize the VAD with.
+   * @param props.mode - The VAD operating mode (0 to 3).
+   * @param props.sampleRate - The input audio sample rate in Hz (8000 to 48000).
+   */
   async init(props?: { mode?: number; sampleRate?: number }): Promise<void> {
     const mode = props?.mode ?? 3;
     const sampleRate = props?.sampleRate ?? 8000;
@@ -29,10 +35,18 @@ export class VAD {
     this._successfulyInitialized = true;
   }
 
+  /**
+   * Check if the VAD is initialized.
+   */
   isInitialized(): boolean {
     return this._successfulyInitialized;
   }
 
+  /**
+   * Process an audio buffer and detect voice activity.
+   * @param audioBuffer - The audio buffer to process.
+   * @returns An async generator that yields `true` if speech is detected in the frame, `false` otherwise.
+   */
   async *processAudio(audioBuffer: Uint8Array): AsyncGenerator<boolean> {
     if (!this.isInitialized()) {
       throw new Error("VAD not initialized");
@@ -66,6 +80,9 @@ export class VAD {
     }
   }
 
+  /**
+   * Free the resources used by the Voice Activity Detector (VAD).
+   */
   free() {
     if (this.isInitialized()) {
       this._module!._fvad_free(this._fvadPtr);
